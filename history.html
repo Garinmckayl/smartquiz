@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Smartquiz.me is your place to test your knowledge. Take automatically generated quizzes to assess your self."
+    />
+    <!-- Website Title -->
+    <title>SmartQuiz History| - Find out how much do you learned</title>
+
+    <!-- Styles -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/quiz.css" rel="stylesheet" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png" />
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
+
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- end of preloader -->
+    <!-- <button class="add-button">Add to home screen</button> -->
+    <style>
+      /* .add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+} */
+    </style>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <div
+          id="login-lightbox"
+          class="lightbox-basic zoom-anim-dialog mfp-hide"
+        >
+          <h1>Login or Sign-up</h1>
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
+        </div>
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"
+          ><img src="images/logo.png" alt="alternative"
+        /></a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-awesome fas fa-bars"></span>
+          <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#header"
+                >HOME <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll active" href="history.html"
+                >HISTORY <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                hidden
+                id="sign-in"
+                class="nav-link popup-with-move-anim"
+                href="#login-lightbox"
+                >LOGIN</a
+              >
+            </li>
+            <li class="nav-item">
+              <a id="dashboard" class="nav-link" href="dashboard.html"
+                >DASHBOARD</a
+              >
+            </li>
+            <li class="nav-item">
+              <a hidden id="user-name" class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <div
+                hidden
+                id="user-pic"
+                class="rounded-circle nav-link user-profile"
+              ></div>
+            </li>
+            <li class="nav-item">
+              <a
+                hidden
+                id="sign-out"
+                class="btn btn-outline-danger btn-auth"
+                href="#login-lightbox"
+                >Sign Out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- end of container -->
+    </nav>
+    <!-- end of navbar -->
+    <!-- end of navigation -->
+
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="header-content">
+        <div class="container"></div>
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <!--Display List of Urls -->
+    <div class="cards-1" id="urls">
+      <div class="" id="url-form">
+        <h1 class="text-center">
+          Your previous quiz websites
+        </h1>
+      </div>
+    </div>
+    <!-- end of List Of Urs -->
+
+    <!-- Footer -->
+    <svg
+      class="footer-frame"
+      data-name="Layer 2"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveaspectratio="none"
+      viewbox="0 0 1920 79"
+    >
+      <defs>
+        <style>
+          .cls-2 {
+            fill: #ff5900;
+          }
+        </style>
+      </defs>
+      <title>footer-frame</title>
+      <path
+        class="cls-2"
+        d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z"
+        transform="translate(0 -0.188)"
+      />
+    </svg>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="p-small">Copyright © 2020 SmartQuiz</p>
+            <li class="media">
+              <div class="media-body">
+                <a class="white" href="https://blog.smartquiz.me">BLOG</a> |
+                <a class="white" href="terms-conditions.html"
+                  >Terms & Conditions</a
+                >
+                |
+                <a class="white" href="privacy-policy.html"> Privacy Policy</a>
+                |
+                <a class="white" href="mailto:contact@smartquiz.me">
+                  Contact Us</a
+                >
+              </div>
+            </li>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- enf of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of copyright -->
+    <!-- end of copyright -->
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBdAbN5Z1jsABBZqv6Y5IQnE_zG1dgIDG0",
+        authDomain: "smartquizme.firebaseapp.com",
+        databaseURL: "https://smartquizme.firebaseio.com",
+        projectId: "smartquizme",
+        storageBucket: "smartquizme.appspot.com",
+        messagingSenderId: "297362999374",
+        appId: "1:297362999374:web:a6d69de825870d26aadb1f",
+        measurementId: "G-TY67Q68SP7"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="js/history.js"></script>
+  </body>
+</html>
